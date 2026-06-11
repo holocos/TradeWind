@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tradewind — More Booked Jobs. No Missed Calls. We Handle It For You.</title>
+<meta name="description" content="Tradewind builds local HVAC and home-service businesses a simple landing page plus an automated follow-up system, so every lead gets answered — even when you're on a job. Local to Columbus, GA. Book a free call." />
+<meta name="theme-color" content="#0E2A47" />
+<link rel="canonical" href="https://tradewindhq.com/" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tradewind — More Booked Jobs. No Missed Calls." />
+<meta property="og:description" content="We build local trades a simple landing page and an automated follow-up system, so every lead gets answered — even when you're on a job. Book a free call." />
+<meta property="og:url" content="https://tradewindhq.com/" />
+<meta property="og:site_name" content="Tradewind" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Favicon (inline SVG: a simple airflow/wind mark) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E2A47'/%3E%3Cpath d='M6 12h13a3 3 0 1 0-3-3' fill='none' stroke='%23F4A23B' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M6 17h17a3 3 0 1 1-3 3' fill='none' stroke='%233FA7D6' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M6 22h9' fill='none' stroke='%23F4A23B' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+<!-- Fonts: Poppins (headings) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Structured data: helps local SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Tradewind",
+  "description": "Landing pages and automated follow-up systems for local HVAC and home-service businesses.",
+  "areaServed": "Columbus, GA",
+  "url": "https://tradewindhq.com/",
+  "telephone": "+1-334-384-1191",
+  "email": "tradewindhq@gmail.com",
+  "priceRange": "$$"
+}
+</script>
+
+<style>
+  :root{
+    --navy:#0E2A47;
+    --navy-2:#13345A;
+    --navy-3:#0A2038;
+    --amber:#F4A23B;
+    --amber-2:#E08D24;
+    --sky:#3FA7D6;
+    --sky-soft:#E8F4FB;
+    --bg:#F7F8FA;
+    --card:#FFFFFF;
+    --text:#21314A;
+    --slate:#5B6675;
+    --line:#E4E8EF;
+    --shadow:0 8px 28px rgba(14,42,71,.08);
+    --shadow-lg:0 22px 60px rgba(14,42,71,.20);
+    --radius:16px;
+    --radius-lg:24px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    font-size:18px;          /* big, readable baseline */
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  h1,h2,h3,h4{
+    font-family:"Poppins","Inter",sans-serif;
+    color:var(--navy);line-height:1.12;margin:0 0 .55em;
+    letter-spacing:-.02em;font-weight:700;
+  }
+  h1{font-size:clamp(2.3rem,5.4vw,3.7rem);font-weight:800}
+  h2{font-size:clamp(1.85rem,3.6vw,2.6rem)}
+  h3{font-size:clamp(1.2rem,2vw,1.4rem)}
+  p{margin:0 0 1em}
+  .lead{font-size:clamp(1.12rem,1.7vw,1.32rem);color:var(--slate)}
+
+  .container{max-width:1140px;margin:0 auto;padding:0 22px}
+  .section{padding:clamp(64px,9vw,108px) 0}
+  .section--tight{padding:clamp(48px,7vw,84px) 0}
+  .center{text-align:center}
+  .muted{color:var(--slate)}
+  .eyebrow{
+    display:inline-block;color:var(--sky);font-weight:700;font-family:"Poppins",sans-serif;
+    text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;margin-bottom:.7rem;
+  }
+  .eyebrow--amber{color:var(--amber)}
+  .maxw{max-width:760px}
+  .center .maxw{margin-left:auto;margin-right:auto}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+    padding:1.02rem 1.6rem;border-radius:999px;font-weight:700;
+    font-family:"Poppins",sans-serif;font-size:1.05rem;line-height:1;
+    border:2px solid transparent;cursor:pointer;white-space:nowrap;
+    min-height:56px;                 /* thumb-friendly tap target */
+    transition:transform .15s ease, background-color .18s ease, box-shadow .2s ease, border-color .18s ease, color .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(0);transition-duration:.05s}
+  .btn:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+
+  .btn-primary{background:var(--amber);color:#23170A;box-shadow:0 12px 26px rgba(244,162,59,.40)}
+  .btn-primary:hover{background:var(--amber-2);box-shadow:0 16px 34px rgba(244,162,59,.5)}
+
+  .btn-ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.10);border-color:#fff}
+
+  .btn-text{ /* "or text us" style secondary link */
+    display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:#fff;
+    font-family:"Poppins",sans-serif;font-size:1.02rem;
+  }
+  .btn-text svg{width:1.2em;height:1.2em}
+  .btn-text strong{color:var(--amber)}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem 1.4rem;align-items:center}
+  .center .cta-row{justify-content:center}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(14,42,71,.92);
+    backdrop-filter:saturate(150%) blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    transition:box-shadow .25s ease, background-color .25s ease;
+  }
+  header.site.scrolled{box-shadow:0 10px 30px rgba(10,32,56,.35)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:"Poppins",sans-serif;font-weight:800;
+    font-size:1.32rem;color:#fff;letter-spacing:-.01em}
+  .brand svg{width:34px;height:34px;flex:none}
+  .nav-right{display:flex;align-items:center;gap:1.4rem}
+  .nav-links{display:flex;gap:1.5rem}
+  .nav-links a{color:#cdd7e4;font-weight:600;font-size:1rem;transition:color .15s ease}
+  .nav-links a:hover{color:#fff}
+  header .btn{padding:.7rem 1.2rem;min-height:46px;font-size:.98rem}
+  .nav-phone{display:none;color:#fff;font-weight:700;font-family:"Poppins",sans-serif;align-items:center;gap:.45rem}
+  .nav-phone svg{width:1.05em;height:1.05em;color:var(--amber)}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;color:#fff;
+    background:
+      radial-gradient(900px 520px at 85% -10%, rgba(63,167,214,.22), transparent 60%),
+      radial-gradient(700px 500px at 5% 110%, rgba(244,162,59,.14), transparent 55%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-3) 100%);
+  }
+  .hero .container{padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(56px,7vw,96px)}
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .hero h1{color:#fff;max-width:14ch}
+  .hero .lead{color:#cdd9e8;max-width:46ch;font-size:clamp(1.12rem,1.7vw,1.32rem)}
+  .hero h1 .hl{color:var(--amber)}
+  .hero-cta{margin-top:1.8rem}
+  .hero-cta .btn-text{margin-top:.2rem}
+  .hero-availability{
+    display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1.4rem;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+    padding:.45rem .9rem;border-radius:999px;font-size:.92rem;color:#dce6f1;font-weight:600;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:#43d17f;box-shadow:0 0 0 4px rgba(67,209,127,.22)}
+
+  /* Phone mockup (pure CSS/SVG — no image weight) */
+  .phone-wrap{display:flex;justify-content:center;position:relative}
+  .phone{
+    width:300px;max-width:78vw;background:#0b1c30;border-radius:38px;
+    padding:14px;box-shadow:var(--shadow-lg), 0 0 0 2px rgba(255,255,255,.06);
+    position:relative;
+  }
+  .phone-screen{background:#0f2238;border-radius:26px;overflow:hidden;height:560px;display:flex;flex-direction:column}
+  .phone-notch{position:absolute;top:24px;left:50%;transform:translateX(-50%);width:120px;height:26px;background:#0b1c30;border-radius:0 0 16px 16px;z-index:2}
+  .ph-top{background:#14304e;padding:34px 18px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .ph-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--navy-2));display:grid;place-items:center;color:#fff;font-weight:700;font-family:"Poppins";font-size:.95rem}
+  .ph-name{color:#fff;font-weight:700;font-size:.98rem;font-family:"Poppins"}
+  .ph-sub{color:#8aa2bd;font-size:.78rem}
+  .ph-chat{padding:16px;display:flex;flex-direction:column;gap:12px;flex:1;font-size:.86rem}
+  .ph-missed{align-self:center;background:rgba(244,162,59,.14);color:#f6c485;border:1px solid rgba(244,162,59,.3);
+    padding:.45rem .8rem;border-radius:999px;font-size:.74rem;font-weight:600;display:inline-flex;align-items:center;gap:.4rem}
+  .ph-missed svg{width:.9em;height:.9em}
+  .ph-handoff{align-self:center;color:#7e96b2;font-size:.68rem;font-weight:600;letter-spacing:.02em;padding:2px 0}
+  .bubble{max-width:82%;padding:.6rem .82rem;border-radius:16px;line-height:1.4}
+  .bubble.them{align-self:flex-start;background:#22405f;color:#e7eef6;border-bottom-left-radius:5px}
+  .bubble.us{align-self:flex-end;background:var(--amber);color:#23170A;border-bottom-right-radius:5px;font-weight:500}
+  .bubble .meta{display:block;font-size:.66rem;opacity:.7;margin-top:.25rem;font-weight:600}
+  .ph-tag{align-self:center;margin-top:auto;color:#7e96b2;font-size:.72rem;display:flex;align-items:center;gap:.4rem;padding-top:6px}
+  .ph-tag svg{width:.95em;height:.95em;color:var(--sky)}
+  .phone-float{
+    position:absolute;background:#fff;color:var(--navy);border-radius:14px;padding:.7rem .9rem;
+    box-shadow:var(--shadow-lg);font-weight:700;font-family:"Poppins";font-size:.86rem;display:flex;align-items:center;gap:.5rem;
+  }
+  .phone-float svg{width:1.3em;height:1.3em;color:#43b06a}
+  .phone-float--tr{top:8%;right:-6%}
+
+  /* Trust strip */
+  .trust{background:var(--navy-3);color:#aebfd2;border-top:1px solid rgba(255,255,255,.06)}
+  .trust .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.8rem 2.2rem;
+    padding-top:20px;padding-bottom:20px;text-align:center}
+  .trust strong{color:#fff;font-family:"Poppins"}
+  .trust-item{display:inline-flex;align-items:center;gap:.5rem;font-size:.95rem;font-weight:600}
+  .trust-item svg{width:1.15em;height:1.15em;color:var(--sky)}
+
+  /* ---------- Generic section heads ---------- */
+  .sec-head{margin-bottom:clamp(2.2rem,4vw,3.2rem)}
+
+  /* Problem cards */
+  .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .prob{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem 1.6rem;box-shadow:var(--shadow)}
+  .prob .ic{width:52px;height:52px;border-radius:13px;background:#fdeede;display:grid;place-items:center;margin-bottom:1.1rem}
+  .prob .ic svg{width:26px;height:26px;color:var(--amber-2)}
+  .prob h3{margin-bottom:.35em}
+  .prob p{margin:0;color:var(--slate);font-size:1rem}
+
+  /* Solution cards */
+  .sol{background:var(--navy);color:#fff}
+  .sol h2,.sol h3{color:#fff}
+  .sol .lead{color:#c6d4e6}
+  .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .sol-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);
+    padding:2rem 1.7rem;transition:transform .2s ease, border-color .2s ease, background-color .2s ease}
+  .sol-card:hover{transform:translateY(-4px);border-color:rgba(63,167,214,.5);background:rgba(255,255,255,.06)}
+  .sol-card .ic{width:54px;height:54px;border-radius:14px;background:rgba(63,167,214,.16);display:grid;place-items:center;margin-bottom:1.2rem}
+  .sol-card .ic svg{width:27px;height:27px;color:var(--sky)}
+  .sol-card p{color:#bccbde;margin:0;font-size:1rem}
+  .sol-note{margin-top:2.4rem;text-align:center;color:#9fb2c9;font-size:1rem;display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap}
+  .sol-note svg{width:1.2em;height:1.2em;color:var(--sky)}
+
+  /* How it works steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;counter-reset:step}
+  .step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:2.2rem 1.7rem 1.8rem;box-shadow:var(--shadow)}
+  .step .num{font-family:"Poppins";font-weight:800;font-size:2.4rem;color:var(--amber);line-height:1;margin-bottom:.5rem;display:block}
+  .step h3{margin-bottom:.3em}
+  .step p{margin:0;color:var(--slate);font-size:1rem}
+  .steps-cta{margin-top:2.6rem;text-align:center}
+
+  /* Proof / results */
+  .proof-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:1.6rem;align-items:stretch}
+  .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(1.8rem,3vw,2.6rem);box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .quote .stars{color:var(--amber);font-size:1.2rem;letter-spacing:2px;margin-bottom:1rem}
+  .quote blockquote{margin:0;font-family:"Poppins";font-weight:500;font-size:clamp(1.3rem,2.4vw,1.7rem);color:var(--navy);line-height:1.32;letter-spacing:-.01em}
+  .quote .who{margin-top:auto;padding-top:1.6rem;display:flex;align-items:center;gap:.85rem}
+  .quote .who .ava{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--navy));display:grid;place-items:center;color:#fff;font-weight:700;font-family:"Poppins"}
+  .quote .who b{display:block;color:var(--navy);font-family:"Poppins"}
+  .quote .who span{color:var(--slate);font-size:.95rem}
+  .quote--offer{justify-content:center}
+  .get-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.05rem}
+  .get-list li{display:flex;gap:.75rem;align-items:flex-start;font-family:"Poppins",sans-serif;font-weight:500;
+    font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--navy);line-height:1.35}
+  .get-list li svg{width:1.4rem;height:1.4rem;color:var(--sky);flex:none;margin-top:.12em}
+  .stat-stack{display:grid;grid-template-rows:1fr 1fr;gap:1.6rem}
+  .stat{background:var(--navy);color:#fff;border-radius:var(--radius-lg);padding:1.8rem;display:flex;flex-direction:column;justify-content:center}
+  .stat.alt{background:linear-gradient(150deg,var(--sky),#2b88b4)}
+  .stat .big{font-family:"Poppins";font-weight:800;font-size:clamp(2.4rem,4.4vw,3rem);line-height:1;color:#fff}
+  .stat .lbl{color:rgba(255,255,255,.85);margin-top:.5rem;font-size:1rem}
+
+  /* Founder note */
+  .founder{background:var(--sky-soft)}
+  .founder-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,3.6rem);align-items:center}
+  .founder-photo{
+    aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);
+    background:linear-gradient(150deg,var(--navy-2),var(--navy));display:grid;place-items:center;position:relative;
+  }
+  /* object-position anchored high so the square crop shows head & shoulders and cuts off the menu at the bottom */
+  /* founder.jpg is pre-cropped to a square head-and-shoulders shot, so it fills the square frame as-is */
+  .founder-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+  .founder blockquote{margin:0 0 1.1rem;font-family:"Poppins";font-weight:500;font-size:clamp(1.3rem,2.6vw,1.85rem);color:var(--navy);line-height:1.3;letter-spacing:-.01em}
+  .founder .sign{font-weight:700;color:var(--navy);font-family:"Poppins"}
+  .founder .sign span{display:block;color:var(--slate);font-weight:500;font-family:"Inter";font-size:.95rem}
+
+  /* Offer / risk reverser */
+  .offer{background:var(--navy);color:#fff}
+  .offer-card{
+    max-width:880px;margin:0 auto;background:linear-gradient(160deg,var(--navy-2),var(--navy-3));
+    border:1px solid rgba(63,167,214,.3);border-radius:var(--radius-lg);
+    padding:clamp(2.2rem,4vw,3.4rem);box-shadow:var(--shadow-lg);text-align:center;position:relative;overflow:hidden;
+  }
+  .offer-card::before{content:"";position:absolute;inset:-1px;background:radial-gradient(500px 200px at 50% -20%,rgba(244,162,59,.18),transparent 70%);pointer-events:none}
+  .offer h2{color:#fff}
+  .offer .tag{display:inline-block;background:var(--amber);color:#23170A;font-weight:700;font-family:"Poppins";padding:.4rem .9rem;border-radius:999px;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.2rem}
+  .offer .lead{color:#c6d4e6;max-width:54ch;margin-left:auto;margin-right:auto}
+  .reassure{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 1.8rem;margin:1.8rem 0 2rem;color:#cdd9e8}
+  .reassure span{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:1rem}
+  .reassure svg{width:1.2em;height:1.2em;color:#43d17f}
+  .offer .price-note{color:#9fb2c9;font-size:.95rem;margin-top:1.4rem;margin-bottom:0}
+
+  /* FAQ */
+  .faq-wrap{max-width:780px;margin:0 auto}
+  .faq{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);margin-bottom:.85rem;overflow:hidden;box-shadow:0 2px 10px rgba(14,42,71,.04)}
+  .faq summary{
+    list-style:none;cursor:pointer;padding:1.25rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    font-family:"Poppins";font-weight:600;font-size:1.08rem;color:var(--navy);
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:focus-visible{outline:3px solid var(--sky);outline-offset:-3px;border-radius:var(--radius)}
+  .faq .chev{flex:none;width:24px;height:24px;color:var(--amber-2);transition:transform .22s ease}
+  .faq[open] .chev{transform:rotate(45deg)}
+  .faq .ans{padding:0 1.4rem 1.3rem;color:var(--slate);font-size:1.02rem}
+  .faq .ans p{margin:0}
+
+  /* Final CTA */
+  .final{position:relative;overflow:hidden;color:#fff;text-align:center;
+    background:
+      radial-gradient(700px 400px at 50% -20%, rgba(63,167,214,.22), transparent 60%),
+      linear-gradient(160deg, var(--navy-2), var(--navy-3));
+  }
+  .final h2{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem)}
+  .final .lead{color:#cdd9e8;max-width:48ch;margin-left:auto;margin-right:auto}
+  .final .cta-row{margin-top:2rem;justify-content:center}
+  .final .or{color:#9fb2c9;margin-top:1.2rem;font-size:1rem}
+  .final .or a{color:#fff;font-weight:700;border-bottom:2px solid var(--amber);padding-bottom:1px}
+  .final .book-note{display:inline-block;margin:.4rem auto 0;background:rgba(244,162,59,.14);
+    border:1px solid rgba(244,162,59,.32);color:#f6c485;font-weight:600;padding:.5rem 1.1rem;border-radius:999px;font-size:1rem}
+  .cal-embed{max-width:760px;margin:2rem auto 1.2rem;background:#fff;border-radius:var(--radius-lg);
+    overflow:hidden;box-shadow:var(--shadow-lg);min-height:680px}
+
+  /* Footer */
+  footer.site{background:var(--navy-3);color:#9fb2c9;padding:46px 0 34px;border-top:1px solid rgba(255,255,255,.07)}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.6rem;align-items:flex-start}
+  .foot-brand{display:flex;align-items:center;gap:.6rem;font-family:"Poppins";font-weight:800;font-size:1.25rem;color:#fff;margin-bottom:.6rem}
+  .foot-brand svg{width:30px;height:30px}
+  .foot-col h4{color:#fff;font-size:1rem;margin-bottom:.7rem}
+  .foot-contact a{display:flex;align-items:center;gap:.55rem;color:#c4d2e2;margin-bottom:.55rem;font-weight:600}
+  .foot-contact a:hover{color:#fff}
+  .foot-contact svg{width:1.05em;height:1.05em;color:var(--amber);flex:none}
+  .foot-social{display:flex;gap:.7rem;margin-top:.4rem}
+  .foot-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);display:grid;place-items:center;transition:background-color .15s ease}
+  .foot-social a:hover{background:var(--sky)}
+  .foot-social svg{width:18px;height:18px;color:#fff}
+  .foot-bottom{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.08);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;font-size:.9rem}
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    .hero h1,.hero .lead{max-width:none;margin-left:auto;margin-right:auto}
+    .hero .cta-row{justify-content:center}
+    .hero-availability{margin-left:auto;margin-right:auto}
+    .phone-wrap{margin-top:1rem}
+    .proof-grid,.founder-grid{grid-template-columns:1fr}
+    .founder-photo{max-width:340px;margin:0 auto}
+    .nav-phone{display:none}
+  }
+  @media (min-width:1100px){ .nav-phone{display:flex} }
+  @media (max-width:760px){
+    .prob-grid,.sol-grid,.steps{grid-template-columns:1fr}
+    .nav-links{display:none}
+    .stat-stack{grid-template-rows:auto auto}
+  }
+  @media (max-width:420px){
+    body{font-size:17px}
+    .btn{width:100%}
+    .hero .cta-row{flex-direction:column;align-items:stretch}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .btn,.sol-card{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site" id="top">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Tradewind home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#13345A"/><path d="M6 12h13a3 3 0 1 0-3-3" fill="none" stroke="#F4A23B" stroke-width="2.4" stroke-linecap="round"/><path d="M6 17h17a3 3 0 1 1-3 3" fill="none" stroke="#3FA7D6" stroke-width="2.4" stroke-linecap="round"/><path d="M6 22h9" fill="none" stroke="#F4A23B" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Tradewind
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#how">How it works</a>
+      </nav>
+      <a class="nav-phone" href="tel:+13343841191"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>(334) 384-1191</a>
+      <a class="btn btn-primary" href="#book">Book a Free Call</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="hero-availability"><span class="dot" aria-hidden="true"></span> Now taking a few new local trades this month</span>
+        <h1>More booked jobs. <span class="hl">No missed calls.</span> We handle it for you.</h1>
+        <p class="lead">We build local HVAC and home-service businesses a simple landing page and an automated follow-up system — so every lead gets answered, even when you're up on a roof or under a house.</p>
+        <div class="hero-cta">
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#book">Book a Free Call
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn-text" href="tel:+13343841191">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              or call/text us: <strong>(334) 384-1191</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-wrap" aria-hidden="false">
+        <div class="phone">
+          <span class="phone-notch"></span>
+          <div class="phone-screen">
+            <div class="ph-top">
+              <div class="ph-avatar">CA</div>
+              <div>
+                <div class="ph-name">Chattahoochee Air</div>
+                <div class="ph-sub">Text message</div>
+              </div>
+            </div>
+            <div class="ph-chat">
+              <div class="ph-missed">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/><line x1="23" y1="1" x2="17" y2="7"/><line x1="17" y1="1" x2="23" y2="7"/></svg>
+                Missed call — 2:14 PM
+              </div>
+              <div class="bubble us">Hi, this is Chattahoochee Air &amp; Heat. Sorry we missed you! What can we help with? We can usually get someone out same-day.
+                <span class="meta">Sent automatically · 2:14 PM</span>
+              </div>
+              <div class="bubble them">AC stopped cooling. Can you come today?</div>
+              <div class="ph-handoff">— you reply when you're free —</div>
+              <div class="bubble us">Absolutely — I can have someone out by 4:30. What's the address?
+                <span class="meta">You · 2:21 PM</span>
+              </div>
+              <div class="ph-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                You missed the call — not the job
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-float phone-float--tr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Lead saved
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<div class="trust">
+  <div class="container">
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Built for local trades in <strong>Columbus, GA</strong></span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> No long contracts</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Set up for you in days</span>
+  </div>
+</div>
+
+<!-- ===================== PROBLEM ===================== -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow eyebrow--amber">Sound familiar?</span>
+      <h2>The jobs aren't slow. The follow-up is.</h2>
+      <p class="lead maxw">Most local trades don't lose work because they're bad at it. They lose it on the follow-up — when something breaks, people don't call one company and wait. They call a few, and hire whoever gets back to them first.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/><line x1="23" y1="1" x2="17" y2="7"/><line x1="17" y1="1" x2="23" y2="7"/></svg></div>
+        <h3>Missed calls = lost jobs</h3>
+        <p>Most callers won't leave a voicemail. They just call the next guy on the list — and you never even knew they rang.</p>
+      </div>
+      <div class="prob reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="6" y1="8" x2="14" y2="8"/></svg></div>
+        <h3>A weak or no website</h3>
+        <p>An out-of-date site (or none at all) makes a solid local company look smaller than it is. And folks look you up before they call — a weak site can lose them before the phone ever rings.</p>
+      </div>
+      <div class="prob reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Slow follow-up</h3>
+        <p>The quote goes to whoever texts back first. If you're on a job and reply that evening, the job's already gone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOLUTION ===================== -->
+<section class="section sol" id="solution">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">What Tradewind does</span>
+      <h2>One simple system that catches every lead</h2>
+      <p class="lead maxw">You keep doing the work you're great at. We make sure no call, quote, or customer slips through the cracks.</p>
+    </div>
+    <div class="sol-grid">
+      <div class="sol-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>A landing page that books jobs</h3>
+        <p>Clean, fast, and mobile, with a big click-to-call button front and center. Built for you in days — not months.</p>
+      </div>
+      <div class="sol-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Never miss a call</h3>
+        <p>If you can't pick up, the caller instantly gets a friendly text back. The lead stays warm and the conversation keeps going.</p>
+      </div>
+      <div class="sol-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
+        <h3>Automatic follow-up</h3>
+        <p>Review requests, appointment reminders, and check-ins go out on their own — so you get more 5-star reviews and repeat work without lifting a finger.</p>
+      </div>
+    </div>
+    <p class="sol-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6-6.3 4.6L7.9 13.9 2 9.4h7.6z"/></svg>
+      Powered by smart automation — so nothing falls through the cracks.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow eyebrow--amber">How it works</span>
+      <h2>Three steps. We do the tech part.</h2>
+      <p class="lead maxw">No software to learn, no setup on your end. If you can answer a phone, you can use this.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="num">1</span>
+        <h3>We talk</h3>
+        <p>A quick, free call about your business — how you get jobs now and where leads are slipping. No pressure, no pitch.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">2</span>
+        <h3>We build it</h3>
+        <p>We set up your landing page and follow-up system for you, start to finish. You don't touch a thing.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">3</span>
+        <h3>You get more jobs</h3>
+        <p>Calls get answered, leads get followed up, and your calendar fills up — while you stay focused on the work.</p>
+      </div>
+    </div>
+    <div class="steps-cta reveal">
+      <a class="btn btn-primary" href="#book">Book a Free Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOUNDER NOTE ===================== -->
+<section class="section founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-photo reveal">
+        <img src="founder.jpg" alt="Joseph Hauksson, founder of Tradewind" />
+      </div>
+      <div class="reveal">
+        <span class="eyebrow eyebrow--amber">A note from the founder</span>
+        <blockquote>"I help local trades around Columbus stop losing jobs to missed calls. No long contracts, no jargon — just a system that works, and a real person who actually picks up the phone."</blockquote>
+        <p class="muted">I'm local. I'm not a big out-of-town agency with a call center. When you reach out, you're talking to me directly — and I'll set the whole thing up for you so it's one less thing on your plate.</p>
+        <p class="sign">— Joseph Hauksson<span>Founder, Tradewind · Smiths Station, AL</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OFFER / RISK REVERSER ===================== -->
+<section class="section offer" id="offer">
+  <div class="container">
+    <div class="offer-card reveal">
+      <span class="tag">Start here</span>
+      <h2>A simple, no-risk way to get started</h2>
+      <p class="lead">It starts with a free call — no obligation, no pressure. If it's a fit, I handle the whole setup for you, including the carrier registration that lets the system text your customers — the technical part you'd never want to deal with. No long contracts and you can cancel anytime, so there's nothing to lose by starting the conversation.</p>
+      <div class="reassure">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No long contracts</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cancel anytime</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Set up for you</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Simple flat rate</span>
+      </div>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-primary" href="#book">Book a Free Call</a>
+        <a class="btn btn-ghost-light" href="tel:+13343841191">Call or text us</a>
+      </div>
+      <p class="price-note">Simple flat monthly rate, plus a one-time setup fee. I'll walk you through the exact numbers on the call. No surprise pricing, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow eyebrow--amber">Questions</span>
+      <h2>Straight answers</h2>
+    </div>
+    <div class="faq-wrap">
+      <details class="faq reveal">
+        <summary>Do I have to be good with computers?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="ans"><p>No. We set up everything for you — the landing page, the text-back, all of it. You keep using your phone the way you already do. If anything ever needs changing, you just reach out and we handle it.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>Am I locked into a contract?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="ans"><p>No long-term contract. It's a simple month-to-month flat rate, and you can cancel anytime. We'd rather keep you because it's working than because you're stuck.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>How fast can it be live?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="ans"><p>Your landing page is usually live within a week or two. The text-back can take a little longer, because there's a one-time carrier registration for business texting — that part can run from several days to a couple of weeks. I handle all of it for you and give you a realistic timeline on our call.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>What does it cost?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="ans"><p>A simple flat monthly rate, plus a one-time setup fee — I'll give you the exact numbers on the call. The bigger thing to weigh is what missed calls are already costing you: each one can be a job worth hundreds, even thousands, that goes to whoever answers first. This keeps those jobs with you — and a few recovered jobs should cover the cost.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>Will this work for my type of business?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="ans"><p>If you get jobs over the phone, yes. We started with HVAC, but the same system works for plumbers, electricians, roofers, and most local home-service trades.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="section final" id="book">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Let's talk</span>
+      <h2>Stop losing jobs to missed calls.</h2>
+      <p class="lead">Book a free call and we'll show you exactly how many leads you're leaving on the table — and how to catch them. No pressure, no jargon.</p>
+      <p class="book-note">Pick a time below — I'll text you to confirm and lock it in.</p>
+
+      <div class="cal-embed">
+        <!-- Calendly inline embed (themed in brand amber) -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/jihauksson/free-15-minute-call?hide_gdpr_banner=1&amp;primary_color=f4a23b" style="min-width:320px;height:680px;"></div>
+      </div>
+      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+      <p class="or">Prefer not to book online? <a href="tel:+13343841191">Call (334) 384-1191</a>, <a href="sms:+13343841191">text us</a>, or email <a href="mailto:tradewindhq@gmail.com">tradewindhq@gmail.com</a>. Trouble seeing the calendar? <a href="https://calendly.com/jihauksson/free-15-minute-call" target="_blank" rel="noopener">open it here</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-col">
+        <div class="foot-brand">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#13345A"/><path d="M6 12h13a3 3 0 1 0-3-3" fill="none" stroke="#F4A23B" stroke-width="2.4" stroke-linecap="round"/><path d="M6 17h17a3 3 0 1 1-3 3" fill="none" stroke="#3FA7D6" stroke-width="2.4" stroke-linecap="round"/><path d="M6 22h9" fill="none" stroke="#F4A23B" stroke-width="2.4" stroke-linecap="round"/></svg>
+          Tradewind
+        </div>
+        <p style="max-width:30ch;color:#8ea1b8">Landing pages and automated follow-up for local trades. Built local, in Columbus, GA.</p>
+      </div>
+      <div class="foot-col foot-contact">
+        <h4>Get in touch</h4>
+        <a href="tel:+13343841191"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>(334) 384-1191</a>
+        <a href="sms:+13343841191"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text us</a>
+        <a href="mailto:tradewindhq@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>tradewindhq@gmail.com</a>
+        <a href="https://tradewindhq.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg>tradewindhq.com</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ready when you are</h4>
+        <a class="btn btn-primary" href="#book" style="margin-bottom:1.1rem">Book a Free Call</a>
+        <p style="display:flex;align-items:flex-start;gap:.55rem;color:#9fb2c9;font-size:.95rem;margin:0;max-width:27ch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.05em;height:1.05em;color:var(--amber);flex:none;margin-top:.2em"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Serving Columbus, GA, Smiths Station, AL &amp; the Chattahoochee Valley
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>2026 Tradewind</span>
+      <span>Built local · Smiths Station, AL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header shadow on scroll
+  var header = document.querySelector('header.site');
+  var onScroll = function(){
+    if(window.scrollY > 8){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Reveal-on-scroll (respects reduced motion)
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // FAQ: keep it an accordion (only one open at a time) — easier to scan on a phone
+  var faqs = document.querySelectorAll('details.faq');
+  faqs.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(d.open){ faqs.forEach(function(o){ if(o!==d){ o.open=false; } }); }
+    });
+  });
+</script>
+</body>
+</html>
